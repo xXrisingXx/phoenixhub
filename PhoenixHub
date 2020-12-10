@@ -62,7 +62,7 @@ decal.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 decal.BackgroundTransparency = 1.000
 decal.Position = UDim2.new(0, 5, 0, 0)
 decal.Size = UDim2.new(0, 25, 0, 25)
-decal.Image = "http://www.roblox.com/asset/?id=6066356327"
+decal.Image = "http://www.roblox.com/asset/?id=6061936241"
 decal.ImageColor3 = Color3.fromRGB(170, 85, 0)
 
 ImageButton.Parent = background
@@ -143,31 +143,29 @@ buttontext.Text = 'detected'
 
 if game.PlaceId == 112420803 then
 	buttontext.Text = 'Kohls admin detected!'
+elseif game.PlaceId == 3527629287 then
+	buttontext.Text = 'Big PaintBall detected!'
 end
 
 local function decal_script() -- decal.Script
 	local script = Instance.new('Script', decal)
 
-	wait(1)
-
 	while true do
-		wait(0.1)
+		wait(1)
 		game:GetService('TweenService'):Create(
 			script.Parent,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
 		{ImageColor3 = Color3.fromRGB(29, 29, 29)}):Play()
-		wait(1.1)
+		wait(1)
 	
 		game:GetService('TweenService'):Create(
 			script.Parent,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
 		{ImageColor3 = Color3.fromRGB(170, 85, 0)}):Play()
-		wait(1.1)
+		wait(1)
 	end
 end
 coroutine.wrap(decal_script)()
 local function decal2_script() -- decal2.Script 
 	local script = Instance.new('Script', decal2)
-
-	wait(1) 
 	
 	while true do 
 	
@@ -175,12 +173,12 @@ local function decal2_script() -- decal2.Script
 		game:GetService('TweenService'):Create(
 			script.Parent,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
 		{ImageColor3 = Color3.fromRGB(29, 29, 29)}):Play()
-		wait(1.1)
+		wait(1)
 	
 		game:GetService('TweenService'):Create(
 			script.Parent,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
 		{ImageColor3 = Color3.fromRGB(170, 85, 0)}):Play()
-		wait(1.1)
+		wait(1)
 	end
 end
 coroutine.wrap(decal2_script)()
@@ -198,11 +196,50 @@ end
 coroutine.wrap(drag_script)()
 
 ImageButton.MouseButton1Down:Connect(function()
+loading()
 	if game.PlaceId == 112420803 then
 		kohls()
-	end	
+	end
 end)
 
-function kohls()
+function loading()
+	buttontext.Text = 'loading'
+	wait(0.1)
+	buttontext.Text = 'loading.'
+	wait(0.1)
+	buttontext.Text = 'loading..'
+	wait(0.1)
+	buttontext.Text = 'loading...'
+	wait(0.1)
+	buttontext.Text = 'loading'
+	wait(0.1)
+	buttontext.Text = 'loading.'
+	wait(0.1)
+	buttontext.Text = 'loading..'
+	wait(0.1)
+	buttontext.Text = 'loading...'
+	wait(0.1)
+	buttontext.Text = 'loading'
+	wait(0.1)
+	buttontext.Text = 'loading.'
+	wait(0.1)
+	buttontext.Text = 'loading..'
+	wait(0.1)
+	buttontext.Text = 'loading...'
+	wait(0.1)
+	buttontext.Text = 'loading'
+	wait(0.1)
+	buttontext.Text = 'loading.'
+	wait(0.1)
+	buttontext.Text = 'loading..'
+	wait(0.1)
+	buttontext.Text = 'loading...'
+	wait(0.1)
+	buttontext.Text = 'loaded'
+	wait(0.2)
+	background.Visible = false
+end
 
+function kohls()
+	
 end
