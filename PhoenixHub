@@ -1,0 +1,208 @@
+local VirtualUser = game:GetService('VirtualUser')
+
+game:GetService('Players').LocalPlayer.Idled:Connect(function()
+    VirtualUser:CaptureController()
+    VirtualUser:ClickButton2(Vector2.new())
+end)
+
+
+
+local PhoenixHub = Instance.new("ScreenGui")
+local background = Instance.new("ImageLabel")
+local bar = Instance.new("ImageLabel")
+local exit = Instance.new("ImageButton")
+local decal = Instance.new("ImageButton")
+local ImageButton = Instance.new("ImageButton")
+local buttontext = Instance.new("TextLabel")
+local decal2 = Instance.new("ImageButton")
+
+PhoenixHub.Name = "PhoenixHub"
+PhoenixHub.Parent = game.CoreGui
+PhoenixHub.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+PhoenixHub.ResetOnSpawn = false
+
+background.Name = "background"
+background.Parent = PhoenixHub
+background.AnchorPoint = Vector2.new(0.5, 0.5)
+background.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+background.BackgroundTransparency = 1.000
+background.Position = UDim2.new(0.5, 0, 0.5, 0)
+background.Size = UDim2.new(0, 350, 0, 150)
+background.Visible = false
+background.Image = "rbxassetid://3570695787"
+background.ImageColor3 = Color3.fromRGB(23, 23, 23)
+background.ScaleType = Enum.ScaleType.Slice
+background.SliceCenter = Rect.new(100, 100, 100, 100)
+background.SliceScale = 0.100
+
+bar.Name = "bar"
+bar.Parent = background
+bar.AnchorPoint = Vector2.new(0.5, 0.5)
+bar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+bar.BackgroundTransparency = 1.000
+bar.Position = UDim2.new(0.49911046, 0, 0.0817409232, 0)
+bar.Size = UDim2.new(0, 349, 0, 25)
+bar.Image = "rbxassetid://3570695787"
+bar.ImageColor3 = Color3.fromRGB(29, 29, 29)
+bar.ScaleType = Enum.ScaleType.Slice
+bar.SliceCenter = Rect.new(100, 100, 100, 100)
+bar.SliceScale = 0.100
+
+exit.Name = "exit"
+exit.Parent = bar
+exit.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+exit.BackgroundTransparency = 1.000
+exit.Position = UDim2.new(0.911428571, 0, 0, 0)
+exit.Size = UDim2.new(0, 25, 0, 25)
+exit.Image = "rbxassetid://4688154693"
+
+decal.Name = "decal"
+decal.Parent = bar
+decal.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+decal.BackgroundTransparency = 1.000
+decal.Position = UDim2.new(0, 5, 0, 0)
+decal.Size = UDim2.new(0, 25, 0, 25)
+decal.Image = "http://www.roblox.com/asset/?id=6061936241"
+decal.ImageColor3 = Color3.fromRGB(170, 85, 0)
+
+ImageButton.Parent = background
+ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageButton.BackgroundTransparency = 1.000
+ImageButton.Position = UDim2.new(0.0399999991, 0, 0.252999991, 0)
+ImageButton.Size = UDim2.new(0, 320, 0, 100)
+ImageButton.Image = "rbxassetid://3570695787"
+ImageButton.ImageColor3 = Color3.fromRGB(29, 29, 29)
+ImageButton.ScaleType = Enum.ScaleType.Slice
+ImageButton.SliceCenter = Rect.new(100, 100, 100, 100)
+ImageButton.SliceScale = 0.100
+
+buttontext.Name = "buttontext"
+buttontext.Parent = ImageButton
+buttontext.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+buttontext.BackgroundTransparency = 1.000
+buttontext.Position = UDim2.new(-0.000624999404, 0, -0.00699999928, 0)
+buttontext.Size = UDim2.new(0, 320, 0, 100)
+buttontext.Font = Enum.Font.SourceSans
+buttontext.TextColor3 = Color3.fromRGB(255, 255, 255)
+buttontext.TextSize = 38.000
+buttontext.TextWrapped = true
+buttontext.Text = ''
+
+decal2.Name = "decal"
+decal2.Parent = PhoenixHub
+decal2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+decal2.BackgroundTransparency = 1.000
+decal2.Position = UDim2.new(0.5, 0, 0.5, 0)
+decal2.Size = UDim2.new(0, 20, 0, 20)
+decal2.Image = "http://www.roblox.com/asset/?id=6061936241"
+decal2.ImageColor3 = Color3.fromRGB(170, 85, 0)
+decal2.AnchorPoint = Vector2.new(0.5, 0.5)
+
+wait(0.5) 
+decal2:TweenSize(UDim2.new(0, 400, 0, 400), Enum.EasingDirection.Out, Enum.EasingStyle.Quint)
+wait(0.2)
+decal2:TweenSize(UDim2.new(0, 20, 0, 20), Enum.EasingDirection.Out, Enum.EasingStyle.Quint)
+wait(1.1)
+
+decal2.Visible = false
+background.Visible = true
+
+buttontext.Text = 'detecting'
+wait(0.1)
+buttontext.Text = 'detecting.'
+wait(0.1)
+buttontext.Text = 'detecting..'
+wait(0.1)
+buttontext.Text = 'detecting...'
+wait(0.1)
+buttontext.Text = 'detecting'
+wait(0.1)
+buttontext.Text = 'detecting.'
+wait(0.1)
+buttontext.Text = 'detecting..'
+wait(0.1)
+buttontext.Text = 'detecting...'
+wait(0.1)
+buttontext.Text = 'detecting'
+wait(0.1)
+buttontext.Text = 'detecting.'
+wait(0.1)
+buttontext.Text = 'detecting..'
+wait(0.1)
+buttontext.Text = 'detecting...'
+wait(0.1)
+buttontext.Text = 'detecting'
+wait(0.1)
+buttontext.Text = 'detecting.'
+wait(0.1)
+buttontext.Text = 'detecting..'
+wait(0.1)
+buttontext.Text = 'detecting...'
+wait(.1)
+buttontext.Text = 'detected'
+
+if game.PlaceId == 112420803 then
+	buttontext.Text = 'Kohls admin detected!'
+end
+
+local function decal_script() -- decal.Script
+	local script = Instance.new('Script', decal)
+
+	wait(1)
+
+	while true do
+		wait(0.1)
+		game:GetService('TweenService'):Create(
+			script.Parent,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+		{ImageColor3 = Color3.fromRGB(29, 29, 29)}):Play()
+		wait(1.1)
+	
+		game:GetService('TweenService'):Create(
+			script.Parent,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+		{ImageColor3 = Color3.fromRGB(170, 85, 0)}):Play()
+		wait(1.1)
+	end
+end
+coroutine.wrap(decal_script)()
+local function decal2_script() -- decal2.Script 
+	local script = Instance.new('Script', decal2)
+
+	wait(1) 
+	
+	while true do 
+	
+		wait(0.1) 
+		game:GetService('TweenService'):Create(
+			script.Parent,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+		{ImageColor3 = Color3.fromRGB(29, 29, 29)}):Play()
+		wait(1.1)
+	
+		game:GetService('TweenService'):Create(
+			script.Parent,TweenInfo.new(1,Enum.EasingStyle.Linear,Enum.EasingDirection.InOut),
+		{ImageColor3 = Color3.fromRGB(170, 85, 0)}):Play()
+		wait(1.1)
+	end
+end
+coroutine.wrap(decal2_script)()
+
+exit.MouseButton1Down:Connect(function()
+	PhoenixHub:Destroy()
+end)
+
+local function drag_script() -- decal2.Script 
+	local script = Instance.new('Script', background)
+
+	background.Active = true
+	background.Draggable = true
+end
+coroutine.wrap(drag_script)()
+
+ImageButton.MouseButton1Down:Connect(function()
+	if game.PlaceId == 112420803 then
+		kohls()
+	end	
+end)
+
+function kohls()
+
+end
