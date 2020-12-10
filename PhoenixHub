@@ -62,7 +62,7 @@ decal.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 decal.BackgroundTransparency = 1.000
 decal.Position = UDim2.new(0, 5, 0, 0)
 decal.Size = UDim2.new(0, 25, 0, 25)
-decal.Image = "http://www.roblox.com/asset/?id=6061936241"
+decal.Image = "http://www.roblox.com/asset/?id=6066356327"
 decal.ImageColor3 = Color3.fromRGB(170, 85, 0)
 
 ImageButton.Parent = background
@@ -94,7 +94,7 @@ decal2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 decal2.BackgroundTransparency = 1.000
 decal2.Position = UDim2.new(0.5, 0, 0.5, 0)
 decal2.Size = UDim2.new(0, 20, 0, 20)
-decal2.Image = "http://www.roblox.com/asset/?id=6061936241"
+decal2.Image = "http://www.roblox.com/asset/?id=6066356327"
 decal2.ImageColor3 = Color3.fromRGB(170, 85, 0)
 decal2.AnchorPoint = Vector2.new(0.5, 0.5)
 
