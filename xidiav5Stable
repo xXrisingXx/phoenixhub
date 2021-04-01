@@ -1,0 +1,521 @@
+--main
+print([[CREATED BY @xXrisingXx
+    ───╔═╗╔═╗────────────╔═╗╔═╗
+    ───╚╗╚╝╔╝────────────╚╗╚╝╔╝
+    ╔╗╔╗╚╗╔╝╔═╦╦══╦╦═╗╔══╗╚╗╔╝╔╗╔╗
+    ╚╬╬╝╔╝╚╗║╔╬╣══╬╣╔╗╣╔╗║╔╝╚╗╚╬╬╝
+    ╔╬╬╦╝╔╗╚╣║║╠══║║║║║╚╝╠╝╔╗╚╦╬╬╗
+    ╚╝╚╩═╝╚═╩╝╚╩══╩╩╝╚╩═╗╠═╝╚═╩╝╚╝
+    ──────────────────╔═╝║
+    ──────────────────╚══╝]])
+local lp = game.Players.LocalPlayer
+local char = lp.Character
+local plrs = game.Players
+local zalgo = game:HttpGet("https://pastebin.com/raw/u7b5jBGE")
+print('script has been executed')
+print([[.
+AFTER EACH COMMAND TYPE PART OR FULL NAME OF PLAYER YOU WANT TO CHOOSE FOR INSTANCE ;antikill xX or ;antikill xXrisingXx
+;antikill/adds reset on death ;unantikill/removes antikill
+;antigear/removes gears constantly from chosen player
+;unantigear/removes antigear form player
+;regen/resets admin ;abuse/spams admin pads
+;unabuse/stops spamming pads
+;notifyleft/does a funny message when someone leaves
+;checks/checks if the script is functioning ;getpad/think its broken
+;horse/models a player pretty cool ;cow/makes someone a cow
+;elephant/makes someone a elephant
+;dog/custom dog model
+;god/name defines itself]])
+
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = 'Injected', Text = 'XidiaV5 has been injected into game. For list of commands please press f9!', Duration = 10})
+--anti afk
+local VirtualUser = game:GetService('VirtualUser')
+
+game:GetService('Players').LocalPlayer.Idled:Connect(function()
+    VirtualUser:CaptureController()
+    VirtualUser:ClickButton2(Vector2.new())
+end)
+
+local players = {}
+---------------------------------------------------------------------------------------------
+local XidiaV5 = Instance.new("ScreenGui", game.CoreGui)
+local background = Instance.new("ImageLabel")
+local Command = Instance.new("TextBox")
+local auravector = Instance.new("TextLabel", XidiaV5)
+local pauracmd = Instance.new("TextLabel", XidiaV5)
+pauracmd.Text = 'kill'
+background.Draggable = true
+background.Active = true
+XidiaV5.Name = "XidiaV5" XidiaV5.ResetOnSpawn = false XidiaV5.Enabled = false
+background.Name = "background" background.Parent = XidiaV5 background.AnchorPoint = Vector2.new(0.5, 0.5) background.BackgroundColor3 = Color3.fromRGB(255, 255, 255) background.BackgroundTransparency = 1.000 background.Position = UDim2.new(0.299296796, 0, 0.407768339, 0) background.Size = UDim2.new(0.113881759, 24, 0.0254725143, 24) background.ZIndex = 0 background.Image = "rbxassetid://3570695787" background.ImageColor3 = Color3.fromRGB(0, 0, 0) background.ImageTransparency = 0.300 background.ScaleType = Enum.ScaleType.Slice background.SliceCenter = Rect.new(100, 100, 100, 100) background.SliceScale = 0.120
+Command.Name = "Command" Command.Parent = background Command.BackgroundColor3 = Color3.fromRGB(49, 49, 49) Command.BorderColor3 = Color3.fromRGB(255, 85, 0) Command.BorderSizePixel = 0 Command.Position = UDim2.new(0.0598866642, 0, 0.169929907, 0) Command.Size = UDim2.new(0, 213, 0, 34) Command.Font = Enum.Font.SourceSans Command.Text = "Type here!" Command.TextColor3 = Color3.fromRGB(255, 85, 0) Command.TextScaled = true Command.TextSize = 14.000 Command.TextWrapped = true
+---------------------------------------------------------------------------------------------
+for i,v in pairs(plrs:GetPlayers()) do
+    v.Chatted:Connect(function(msg)
+        chatting(msg, v.Name)
+    end)
+    table.insert(players, 1, v.Name)
+    _G[v.Name] = {adminstate = false}
+    --_G[v.Name] = {aurastate = false}
+    _G[v.Name] = {antikillstate = false}
+    _G[v.Name] = {antigearstate = false}
+    _G[v.Name] = {lagstate = false}
+end
+plrs.PlayerAdded:Connect(function(v)
+    v.Chatted:Connect(function(msg)
+        chatting(msg, v.Name)
+    end)
+    table.insert(players, 1, v.Name)
+    _G[v.Name] = {adminstate = false}
+    _G[v.Name] = {aurastate = false}
+    _G[v.Name] = {antikillstate = false}
+    _G[v.Name] = {antigearstate = false}
+    _G[v.Name] = {lagstate = false}
+end)
+plrs.PlayerRemoving:Connect(function(v)
+    for l,k in pairs(players) do
+        if v.Name == k then table.remove(players, l) end
+    end
+end)
+
+local spamming = Instance.new('BoolValue').Value
+---------------------------------------------------------------------------------------------
+function chatting(string, speaker)
+    if speaker == lp.Name then
+---------------------------------------------------------------------------------------------
+        if matchy(string, ";wl") then
+            local user = getPlayer(string:sub(5))
+            _G[user].adminstate = true
+            bigadmin(user, _G[user].adminstate)
+        elseif matchy(string, ";bl") then
+            local user = getPlayer(string:sub(5))
+            _G[user].adminstate = false
+---------------------------------------------------------------------------------------------
+        elseif matchy(string, ";abuse") then
+            abusingpads = true
+            abusepads()
+        elseif matchy(string, ";unabuse") then
+            abusingpads = false
+---------------------------------------------------------------------------------------------
+        elseif matchy(string, ";antikill") then
+            local user = getPlayer(string:sub(11))
+            _G[user].antikillstate = true
+            myantikill(user, _G[user].antikillstate)
+        elseif matchy(string, ";rantikill") then
+            local user = getPlayer(string:sub(12))
+            _G[user].antikillstate = false
+            myantikill(user, _G[user].antikillstate)
+---------------------------------------------------------------------------------------------
+        elseif matchy(string, ";antigear") then
+            local user = getPlayer(string:sub(11))
+            _G[user].antigearstate = true
+            antigear(user, _G[user].antigearstate)
+        elseif matchy(string, ";unantigear") then
+            local user = getPlayer(string:sub(13))
+            _G[user].antigearstate = false
+            antigear(user, _G[user].antigearstate)
+        elseif matchy(string, ";lag") then
+            local user = getPlayer(string:sub(6))
+            _G[user].lagspamstate = true
+            lagspam(user, _G[user].lagspamstate)
+        elseif matchy(string, ";unlag") then
+            local user = getPlayer(string:sub(8))
+            _G[user].lagspamstate = false
+            lagspam(user, _G[user].lagspamstate)
+---------------------------------------------------------------------------------------------
+        --[[elseif matchy(string, ";aura") then
+            local user = getPlayer(string:sub(7))
+            _G[user].aurastate = true
+            plrs:Chat('ff '..string:sub(7))
+            createaura(user, _G[user].aurastate)
+---------------------------------------------------------------------------------------------
+        elseif matchy(string, ";raura") then
+            local user = getPlayer(string:sub(8))
+            _G[user].aurastate = false
+            createaura(user, _G[user].aurastate)
+            plrs:Chat('reset '..user)
+---------------------------------------------------------------------------------------------
+        elseif matchy(string, ";aurasize") then
+            changeaurasize()--]]
+---------------------------------------------------------------------------------------------
+        elseif matchy(string, ";regen") then
+            regen()
+---------------------------------------------------------------------------------------------
+        elseif matchy(string, ";getpad") then
+            local user = getPlayer(string:sub(9))
+            getpad(user, _G[user].adminstate)
+---------------------------------------------------------------------------------------------
+        elseif matchy(string, ";check") then
+            check()
+        elseif matchy(string, ";notifyleft") then
+            notifyleft()
+        elseif matchy(string, ";horse") then
+            local user = getPlayer(string:sub(8))
+            horse(user)
+        elseif matchy(string, ";dog") then
+            local user = getPlayer(string:sub(6))
+            dog(user)
+        elseif matchy(string, ";elephant") then
+            local user = getPlayer(string:sub(11))
+            elephant(user)
+        elseif matchy(string, ";god") then
+            local user = getPlayer(string:sub(6))
+            god(user)
+        elseif matchy(string, ";cow") then
+            local user = getPlayer(string:sub(6))
+            cow(user)
+        end
+---------------------------------------------------------------------------------------------
+    elseif _G[speaker].admin == true then
+        --[[if speaker == _G[speaker].admin then
+            --admins
+        end--]]
+    else
+        --everyone else
+    end
+end
+---------------------------------------------------------------------------------------------
+function bigadmin(username, adminstate)
+    if adminstate == true then
+        function chatting(string, speaker)
+            if speaker == username or speaker == lp.Name then
+                if matchy(string, ";wl") then
+                    local user = getPlayer(string:sub(5))
+                    _G[user].adminstate = true
+                    bigadmin(user, _G[user].adminstate)
+                elseif matchy(string, ";bl") then
+                    local user = getPlayer(string:sub(5))
+                    _G[user].adminstate = false
+        ---------------------------------------------------------------------------------------------
+                elseif matchy(string, ";abuse") then
+                    abusingpads = true
+                    abusepads()
+                elseif matchy(string, ";unabuse") then
+                    abusingpads = false
+        ---------------------------------------------------------------------------------------------
+                elseif matchy(string, ";antikill") then
+                    local user = getPlayer(string:sub(11))
+                    _G[user].antikillstate = true
+                    myantikill(user, _G[user].antikillstate)
+                elseif matchy(string, ";rantikill") then
+                    local user = getPlayer(string:sub(12))
+                    _G[user].antikillstate = false
+                    myantikill(user, _G[user].antikillstate)
+        ---------------------------------------------------------------------------------------------
+                elseif matchy(string, ";antigear") then
+                    local user = getPlayer(string:sub(11))
+                    _G[user].antigearstate = true
+                    antigear(user, _G[user].antigearstate)
+                elseif matchy(string, ";unantigear") then
+                    local user = getPlayer(string:sub(13))
+                    _G[user].antigearstate = false
+                    antigear(user, _G[user].antigearstate)
+        ---------------------------------------------------------------------------------------------
+                elseif matchy(string, ";lag") then
+                        local user = getPlayer(string:sub(6))
+                        _G[user].lagstate = true
+                        zalgospam = true
+                        spamming = true
+                        lagplayer(user, _G[user].lagstate)
+            --------------------------------------------------------------            
+                    elseif matchy(string, ";unlag") then
+                        local user = getPlayer(string:sub(8))
+                        _G[user].lagstate = false
+                        zalgospam = false  
+                        spamming = false
+                        lagplayer(user, _G[user].lagstate)
+        ---------------------------------------------------------------------------------------------
+                --[[elseif matchy(string, ";aura") then
+                    local user = getPlayer(string:sub(7))
+                    _G[user].aurastate = true
+                    plrs:Chat('ff '..string:sub(7))
+                    createaura(user, _G[user].aurastate)
+        ---------------------------------------------------------------------------------------------
+                elseif matchy(string, ";raura") then
+                    local user = getPlayer(string:sub(8))
+                    _G[user].aurastate = false
+                    createaura(user, _G[user].aurastate)
+                    plrs:Chat('reset '..user)
+        ---------------------------------------------------------------------------------------------
+                elseif matchy(string, ";aurasize") then
+                    changeaurasize()--]]
+        ---------------------------------------------------------------------------------------------
+                elseif matchy(string, ";regen") then
+                    regen()
+        ---------------------------------------------------------------------------------------------
+                elseif matchy(string, ";getpad") then
+                    local user = getPlayer(string:sub(9))
+                    getpad(user, _G[user].adminstate)
+        ---------------------------------------------------------------------------------------------
+                elseif matchy(string, ";check") then
+                    check()
+                elseif matchy(string, ";notifyleft") then
+                    notifyleft()
+                elseif matchy(string, ";horse") then
+                    local user = getPlayer(string:sub(8))
+                    horse(user)
+                elseif matchy(string, ";dog") then
+                    local user = getPlayer(string:sub(6))
+                    dog(user)
+                elseif matchy(string, ";elephant") then
+                    local user = getPlayer(string:sub(11))
+                    elephant(user)
+                elseif matchy(string, ";god") then
+                    local user = getPlayer(string:sub(6))
+                    god(user)
+                elseif matchy(string, ";cow") then
+                    local user = getPlayer(string:sub(6))
+                    cow(user)
+                end
+            end
+        end
+    end
+end
+---------------------------------------------------------------------------------------------
+function horse(username)
+    plrs:Chat('reset '..username)
+    wait(0.5)
+    plrs:Chat('removeclothes '..username)
+    plrs:Chat('unpackage '..username)
+    plrs:Chat('hat '..username..' 106709359')
+    plrs:Chat('dog '..username)
+    plrs:Chat('paint '..username..' white')
+    plrs:Chat('size '..username..' 0.7')
+    plrs:Chat('size '..username..' 2')
+end
+---------------------------------------------------------------------------------------------
+function dog(username)
+    plrs:Chat('reset '..username)
+    wait(0.5)
+    plrs:Chat('size '..username..' 0.7')
+    plrs:Chat('unpackage '..username)
+    plrs:Chat('removehats '..username)
+    plrs:Chat('removeclothes '..username)
+    plrs:Chat('hat '..username..' 268197839')
+    wait(0.01)
+    plrs:Chat('dog '..username)
+    plrs:Chat('size '..username..' 0.7')
+end
+---------------------------------------------------------------------------------------------
+function elephant(username)
+    plrs:Chat('reset '..username)
+    wait(0.5)
+    plrs:Chat('removeclothes '..username)
+    plrs:Chat('unpackage '..username)
+    plrs:Chat('hat '..username..' 32661311')
+    plrs:Chat('dog '..username)
+    plrs:Chat('size '..username..' 3')
+    plrs:Chat('paint '..username..' gray')
+end
+---------------------------------------------------------------------------------------------
+function god(username)
+    plrs:Chat('reset '..username)
+    wait(0.5)
+    plrs:Chat('removeclothes '..username)
+    plrs:Chat('unpackage '..username)
+    plrs:Chat('hat '..username..' 1492205990')
+    plrs:Chat('god '..username)
+    plrs:Chat('paint '..username..' white')
+    plrs:Chat('pants '..username..' 3851830163')
+    plrs:Chat('gear '..username..' 77443461')
+end
+---------------------------------------------------------------------------------------------
+function cow(username)
+    plrs:Chat('reset '..username)
+    wait(0.5)
+    plrs:Chat('removeclothes '..username)
+    plrs:Chat('unpackage '..username)
+    plrs:Chat('dog '..username)
+    plrs:Chat('hat '..username..' 4935038444')
+    plrs:Chat('paint '..username..' white')
+    plrs:Chat('pants '..username..' 1340795766')
+    plrs:Chat('shirt '..username..' 1243752555')
+end
+---------------------------------------------------------------------------------------------
+function anticrash()
+    spawn(function()
+        game:GetService("RunService").RenderStepped:Connect(function(step)
+            for i,v in pairs(game.Players:GetDescendants()) do
+                if v:IsA('Tool') then
+                    if v.Name == 'VampireVanquisher' then
+                        plrs:Chat('reset '..v.Parent.Parent.Name)
+                    end
+                end
+            end
+        end)
+    end)
+end
+---------------------------------------------------------------------------------------------
+function abusepads()
+    fireclickdetector(game:GetService("Workspace").Terrain["_Game"].Admin.Regen.ClickDetector, 0)
+    spawn(function()
+        while abusingpads == true do wait()
+            for i,v in pairs(game.Workspace.Terrain._Game.Admin.Pads:GetChildren()) do
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Head.TouchInterest.Parent, 0)
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Head.TouchInterest.Parent, 1)
+            end
+        end
+    end)
+end
+---------------------------------------------------------------------------------------------
+function lagplayer(username, lagstate)
+    local saver = Instance.new('StringValue', plrs[username].Character) saver.Value = username
+    while wait() do
+        if lagstate == true and spamming == true then
+            function chatting(string, speaker)
+                if speaker == lp.Name then
+                    if matchy(string, ";stoplag") then    
+                        stopped()
+                        clearlogs()
+                    end
+                end
+            end
+            plrs:Chat('pm/'..username..'/'..zalgo)
+            clearlogs()
+            plrs.PlayerRemoving:Connect(function(plrleft)
+                if plrleft.Name == saver.Value then
+                    saver:Destroy()
+                    spamming = false
+                    stopped()
+                    clearlogs()
+                end
+            end)
+        elseif lagstate == false and spamming == false then
+            stopped()
+            clearlogs()
+        end
+    end
+end
+---------------------------------------------------------------------------------------------
+function antigear(username, antigearstate)
+    if antigearstate == true then
+        antigearadd = game:GetService("RunService").RenderStepped:Connect(function(step)
+            if game.Players[username].Backpack:FindFirstChildWhichIsA('Tool') or game.Players[username].Character:FindFirstChildWhichIsA('Tool') then
+                plrs:Chat('removetools '..username)
+            end
+        end)
+        plrs:Chat('reset '..username)
+        plrs:Chat('pm '..username..' NO GEAR FOR YOU!')
+    elseif antigearstate == false then
+        antigearadd:Disconnect()
+        plrs:Chat('pm '..username..' ANTIGEAR OFF')
+    end
+end
+---------------------------------------------------------------------------------------------
+function myantikill(username, antikillstate)
+    if antikillstate == true then
+        antikilladd = game.Players[username].CharacterAdded:connect(function(Char)
+            plrs:Chat('god '..username)
+            plrs:Chat('ff '..username)
+            antikilladddetect = game.Players[username].Character:WaitForChild("Humanoid").Died:Connect(function()
+                plrs:Chat('reset '..Char.Name)
+                plrs:Chat('god '..username)
+                plrs:Chat('ff '..username)
+            end)
+        end)
+        plrs:Chat('reset '..username)
+        plrs:Chat('pm '..username..' Antikill ON')
+    elseif antikillstate == false then
+        antikilladd:Disconnect()
+        antikilladddetect:Disconnect()
+        plrs:Chat('pm '..username..' Antikill OFF')
+    end
+end
+---------------------------------------------------------------------------------------------
+--[[function createaura(username, aurastate)
+    if aurastate == true then
+        auraadd = game.Players[username].CharacterAdded:connect(function(Char)
+            plrs:Chat('ff '..Char.Name)
+            wait(0.3)
+            local ball = Instance.new('Part', Char) ball.Name = 'aura' ball.Shape = Enum.PartType.Ball ball.Anchored = false ball.Material = Enum.Material.ForceField ball.CFrame = ball.Parent.HumanoidRootPart.CFrame ball.Size = Vector3.new(10, 10, 10) ball.BrickColor = BrickColor.new("Lime green") ball.CanCollide = false ball.Transparency = 0 ball.Massless = true ball.CastShadow = false
+            local weld = Instance.new("WeldConstraint", Char) weld.Part0 = weld.Parent.HumanoidRootPart weld.Part1 = ball weld.Name = 'weld'
+            function onTouched(hit)
+                if hit.Parent.Name == username.Name then
+                    --do nothing
+                elseif hit.Parent.Name == char.Name then
+                    --do nothing
+                else
+                    plrs:Chat(''..pauracmd.Text..' '..hit.Parent:FindFirstChild('Humanoid').Parent.Name)
+                end
+            end
+            ball.Touched:Connect(onTouched)
+        end)
+        wait(0.3)
+        plrs:Chat("reset "..username)
+        plrs:Chat("pm "..username.." Your aura is 10 studs")
+    elseif aurastate == false then
+        username.Character:FindFirstChild('killaura'):Destroy()
+        username.Character:FindFirstChild('weld'):Destroy()
+        auraadd:Disconnect()
+    end
+
+    if aurastate == true then
+        function chatting(string, speaker)
+            if speaker == username then
+                if matchy(string, ";") then
+                    pauracmd.Text = string:sub(2)
+                end
+            elseif speaker == lp.Name then
+                if matchy(string, ";auracmd") then
+                    pauracmd.Text = string:sub(9)
+                    plrs:Chat('reset '..username)
+                end
+            end
+        end
+    end
+end--]]
+---------------------------------------------------------------------------------------------
+--[[function changeaurasize()
+    local aurasize = char:FindFirstChild('aura')
+    if aurasize then
+        function chatting(string, speaker)
+            if matchy(string, ";aurasize") then
+                auravector.Text = string:sub(11)
+                aurasize.Size = Vector3.new(string:sub(11), string:sub(11), string:sub(11))
+            end
+        end
+    end
+end--]]
+---------------------------------------------------------------------------------------------
+function regen()
+    fireclickdetector(game:GetService("Workspace").Terrain["_Game"].Admin.Regen.ClickDetector, 0)
+end
+---------------------------------------------------------------------------------------------
+function getpad(username, adminstate)
+    if adminstate == false or adminstate == true then
+        for _,v in pairs(game:GetService("Workspace").Terrain["_Game"].Admin.Pads:GetDescendants()) do
+            if v:IsA("TouchTransmitter") then
+                while wait(0) do
+                    firetouchinterest(game.Players[username].Character.HumanoidRootPart, v.Parent, 0)
+                end
+            end
+        end
+    end
+end
+---------------------------------------------------------------------------------------------
+function check()
+    plrs:Chat('pm '..char.Name..' Already Injected')
+end
+---------------------------------------------------------------------------------------------
+local leftquotes = {'rage quit', "left", "disappeared", "vanished", "ran away", "slipped and died", "decided to do his chored", "picked up his bags and left", "disconnected", "got depressed", "is going to play with themself", "stole his moms card and got caught", "got thrown overboard", "left the server", "is in the gulag", "got gunned down", "got ejected into space", "was kinda sus"}
+
+function notifyleft()
+    game.Players.PlayerRemoving:Connect(function(plrleft)
+        plrs:Chat('h '..plrleft.Name..' '..leftquotes[math.random(table.getn(leftquotes))])
+    end)
+end
+---------------------------------------------------------------------------------------------
+function getPlayer(string)
+    local targ = string:lower()
+    local len = targ:len()
+    for i,v in pairs(game.Players:GetPlayers()) do
+        if v.Name:lower():sub(1, len) == targ then
+            print(v.Name)
+            return v.Name
+        end
+    end
+end
+---------------------------------------------------------------------------------------------
+function matchy(string, cmd)
+    if string:lower():sub(1, cmd:len()):match(cmd) then return true else return false end
+end
