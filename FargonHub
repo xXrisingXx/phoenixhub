@@ -1,0 +1,334 @@
+print([[CREATED BY @xXrisingXx
+    ───╔═╗╔═╗────────────╔═╗╔═╗
+    ───╚╗╚╝╔╝────────────╚╗╚╝╔╝
+    ╔╗╔╗╚╗╔╝╔═╦╦══╦╦═╗╔══╗╚╗╔╝╔╗╔╗
+    ╚╬╬╝╔╝╚╗║╔╬╣══╬╣╔╗╣╔╗║╔╝╚╗╚╬╬╝
+    ╔╬╬╦╝╔╗╚╣║║╠══║║║║║╚╝╠╝╔╗╚╦╬╬╗
+    ╚╝╚╩═╝╚═╩╝╚╩══╩╩╝╚╩═╗╠═╝╚═╩╝╚╝
+    ──────────────────╔═╝║
+    ──────────────────╚══╝]])
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = 'Injected', Text = 'XidiaV5 has been injected into game. For list of commands please press f9!', Duration = 10})
+local FargonHub = Instance.new("ScreenGui")
+local movebar = Instance.new("ImageLabel")
+local exit = Instance.new("ImageButton")
+local icon = Instance.new("ImageButton")
+local fargon = Instance.new("TextLabel")
+local hub = Instance.new("TextLabel")
+local mini = Instance.new("ImageButton")
+local kohls = Instance.new("ImageLabel")
+local mainfunctions = Instance.new("ScrollingFrame")
+local textbacker = Instance.new("ImageLabel")
+local input = Instance.new("TextBox")
+local boolbutton = Instance.new("ImageButton")
+local executebacker = Instance.new("ImageButton")
+local execute = Instance.new("TextButton")
+local maintab = Instance.new("TextButton")
+
+FargonHub.Name = "FargonHub"
+FargonHub.Parent = game.CoreGui
+FargonHub.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+FargonHub.ResetOnSpawn = false
+
+movebar.Name = "movebar"
+movebar.Parent = FargonHub
+movebar.AnchorPoint = Vector2.new(0.5, 0.5)
+movebar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+movebar.BackgroundTransparency = 1.000
+movebar.Position = UDim2.new(0.471238792, 0, 0.309855461, 0)
+movebar.Size = UDim2.new(0, 403, 0, 25)
+movebar.ZIndex = 5
+movebar.Image = "rbxassetid://3570695787"
+movebar.ImageColor3 = Color3.fromRGB(29, 29, 29)
+movebar.ScaleType = Enum.ScaleType.Slice
+movebar.SliceCenter = Rect.new(100, 100, 100, 100)
+movebar.SliceScale = 0.100
+movebar.Active = true
+movebar.Draggable = true
+
+exit.Name = "exit"
+exit.Parent = movebar
+exit.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+exit.BackgroundTransparency = 1.000
+exit.Position = UDim2.new(0.914528966, 0, 0, 0)
+exit.Size = UDim2.new(0, 25, 0, 25)
+exit.Image = "rbxassetid://4688154693"
+exit.ImageColor3 = Color3.fromRGB(200, 200, 200)
+
+icon.Name = "icon"
+icon.Parent = movebar
+icon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+icon.BackgroundTransparency = 1.000
+icon.Position = UDim2.new(0, 5, 0, 0)
+icon.Size = UDim2.new(0, 25, 0, 25)
+icon.ZIndex = 5
+icon.Image = "http://www.roblox.com/asset/?id=6597617413"
+
+fargon.Name = "fargon"
+fargon.Parent = movebar
+fargon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+fargon.BackgroundTransparency = 1.000
+fargon.Position = UDim2.new(0.0773866996, 0, 0.00955444295, 0)
+fargon.Size = UDim2.new(0, 43, 0, 24)
+fargon.Font = Enum.Font.SourceSans
+fargon.Text = "Fargon"
+fargon.TextColor3 = Color3.fromRGB(0, 255, 255)
+fargon.TextScaled = true
+fargon.TextSize = 14.000
+fargon.TextWrapped = true
+fargon.TextXAlignment = Enum.TextXAlignment.Left
+
+hub.Name = "hub"
+hub.Parent = movebar
+hub.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+hub.BackgroundTransparency = 1.000
+hub.Position = UDim2.new(0.182866693, 0, 0.00955444202, 0)
+hub.Size = UDim2.new(0, 24, 0, 24)
+hub.Font = Enum.Font.SourceSans
+hub.Text = "Hub"
+hub.TextColor3 = Color3.fromRGB(170, 255, 0)
+hub.TextScaled = true
+hub.TextSize = 14.000
+hub.TextWrapped = true
+hub.TextXAlignment = Enum.TextXAlignment.Left
+
+mini.Name = "mini"
+mini.Parent = movebar
+mini.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+mini.BackgroundTransparency = 1.000
+mini.Position = UDim2.new(0.851324737, 0, 0, 0)
+mini.Size = UDim2.new(0, 25, 0, 25)
+mini.Image = "rbxassetid://4530358017"
+mini.ImageColor3 = Color3.fromRGB(200, 200, 200)
+
+kohls.Name = "kohls"
+kohls.Parent = movebar
+kohls.AnchorPoint = Vector2.new(0.5, 0.5)
+kohls.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+kohls.BackgroundTransparency = 1.000
+kohls.Position = UDim2.new(0.495714366, 0, 3.81763482, 0)
+kohls.Size = UDim2.new(0, 404, 0, 191)
+kohls.ZIndex = 0
+kohls.Image = "rbxassetid://3570695787"
+kohls.ImageColor3 = Color3.fromRGB(23, 23, 23)
+kohls.ScaleType = Enum.ScaleType.Slice
+kohls.SliceCenter = Rect.new(100, 100, 100, 100)
+kohls.SliceScale = 0.100
+
+mainfunctions.Name = "mainfunctions"
+mainfunctions.Parent = kohls
+mainfunctions.Active = true
+mainfunctions.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+mainfunctions.BorderSizePixel = 0
+mainfunctions.Position = UDim2.new(0, 15, 0, 60)
+mainfunctions.Size = UDim2.new(0, 370, 0, 114)
+mainfunctions.ZIndex = 0
+mainfunctions.BottomImage = "rbxassetid://2991280711"
+mainfunctions.CanvasSize = UDim2.new(0, 0, 0, 100)
+mainfunctions.MidImage = "rbxassetid://2991280711"
+mainfunctions.ScrollBarThickness = 5
+mainfunctions.TopImage = "rbxassetid://2991280711"
+
+textbacker.Name = "textbacker"
+textbacker.Parent = mainfunctions
+textbacker.AnchorPoint = Vector2.new(0.5, 0.5)
+textbacker.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+textbacker.BackgroundTransparency = 1.000
+textbacker.Position = UDim2.new(0, 157, 0, 35)
+textbacker.Size = UDim2.new(0, 263, 0, 37)
+textbacker.ZIndex = 0
+textbacker.Image = "rbxassetid://3570695787"
+textbacker.ImageColor3 = Color3.fromRGB(23, 23, 23)
+textbacker.ScaleType = Enum.ScaleType.Slice
+textbacker.SliceCenter = Rect.new(100, 100, 100, 100)
+textbacker.SliceScale = 0.100
+
+input.Name = "input"
+input.Parent = textbacker
+input.AnchorPoint = Vector2.new(1, 1)
+input.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+input.BackgroundTransparency = 1.000
+input.Position = UDim2.new(0.998000026, 0, 0.916945994, 0)
+input.Size = UDim2.new(0, 262, 0, 37)
+input.Font = Enum.Font.SourceSans
+input.Text = "command here"
+input.TextColor3 = Color3.fromRGB(200, 200, 200)
+input.TextScaled = true
+input.TextSize = 14.000
+input.TextWrapped = true
+
+boolbutton.Name = "boolbutton"
+boolbutton.Parent = mainfunctions
+boolbutton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+boolbutton.BackgroundTransparency = 1.000
+boolbutton.Position = UDim2.new(0.832297266, 0, 0.188301891, 0)
+boolbutton.Size = UDim2.new(0, 30, 0, 30)
+boolbutton.Image = "rbxassetid://3570695787"
+boolbutton.ImageColor3 = Color3.fromRGB(199, 0, 0)
+boolbutton.ScaleType = Enum.ScaleType.Slice
+boolbutton.SliceCenter = Rect.new(100, 100, 100, 100)
+boolbutton.SliceScale = 0.100
+
+executebacker.Name = "executebacker"
+executebacker.Parent = mainfunctions
+executebacker.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+executebacker.BackgroundTransparency = 1.000
+executebacker.Position = UDim2.new(0.0686863661, 0, 0.594832599, 0)
+executebacker.Size = UDim2.new(0, 313, 0, 30)
+executebacker.Image = "rbxassetid://3570695787"
+executebacker.ImageColor3 = Color3.fromRGB(23, 23, 23)
+executebacker.ScaleType = Enum.ScaleType.Slice
+executebacker.SliceCenter = Rect.new(100, 100, 100, 100)
+executebacker.SliceScale = 0.100
+
+execute.Name = "execute"
+execute.Parent = executebacker
+execute.BackgroundColor3 = Color3.fromRGB(23, 23, 23)
+execute.BackgroundTransparency = 0.8
+execute.Position = UDim2.new(0, 0, -0.0799999982, 0)
+execute.Size = UDim2.new(0, 311, 0, 30)
+execute.Font = Enum.Font.SourceSans
+execute.Text = "execute once!"
+execute.TextColor3 = Color3.fromRGB(200, 200, 200)
+execute.TextScaled = true
+execute.TextSize = 14.000
+execute.TextWrapped = true
+
+maintab.Name = "maintab"
+maintab.Parent = kohls
+maintab.BackgroundColor3 = Color3.fromRGB(29, 29, 29)
+maintab.BorderSizePixel = 0
+maintab.Position = UDim2.new(0.037128713, 0, 0.168776378, 0)
+maintab.Size = UDim2.new(0, 47, 0, 28)
+maintab.Font = Enum.Font.SourceSans
+maintab.Text = "MAIN"
+maintab.TextColor3 = Color3.fromRGB(255, 255, 255)
+maintab.TextSize = 14.000
+
+local lp = game.Players.LocalPlayer
+local char = lp.Character
+local plrs = game.Players
+local zalgo = game:HttpGet("https://pastebin.com/raw/u7b5jBGE")
+---------------------------------------------------------------------------------------------
+exit.MouseButton1Down:Connect(function()
+    FargonHub:Destroy()
+end)
+---------------------------------------------------------------------------------------------
+mini.MouseButton1Down:Connect(function()
+    if kohls.Visible == true then
+        kohls.Visible = false
+    elseif kohls.Visible == false then
+        kohls.Visible = true
+    end
+end)
+---------------------------------------------------------------------------------------------
+local spamming = Instance.new('BoolValue').Value
+boolbutton.MouseButton1Down:Connect(function()
+    if spamming == false then
+        spamming = true
+        game:GetService('StarterGui'):SetCore('SendNotification', {Title = 'ON', Text = 'Spamming chosen command!', Duration = 5})
+        boolbutton.ImageColor3 = Color3.fromRGB(85, 170, 0)
+    elseif spamming == true then
+        spamming = false
+        game:GetService('StarterGui'):SetCore('SendNotification', {Title = 'OFF', Text = 'Stopped spamming chosen command!', Duration = 5})
+        boolbutton.ImageColor3 = Color3.fromRGB(199, 0, 0)
+    end
+end)
+
+function()
+---------------------------------------------------------------------------------------------
+execute.MouseButton1Down:Connect(function()
+    local txt = input.Text
+    if txt then
+            ---------------------------------------------------------------------
+        if txt:lower():sub(1, 3) == 'lag' then
+            plrs:Chat('pm/'..txt:lower():sub(5)..'/'..zalgo)
+            ---------------------------------------------------------------------
+        elseif txt:lower():sub(1) == 'crash' then
+            plrs:Chat('gear me 00000000000000000094794847')
+            plrs.LocalPlayer.Character.Humanoid:EquipTool(plrs.LocalPlayer.Backpack.VampireVanquisher)
+            plrs:Chat('size me .3')
+            ---------------------------------------------------------------------
+        elseif txt:lower():sub(1) == 'scrash' then
+            plrs:Chat('clr')
+            plrs:Chat('gear all 00000000000000000094794847')
+            plrs:Chat('h/'..zalgo)
+            plrs:Chat('clr')
+            plrs:Chat('fix')
+            plrs:Chat('time 0')
+            plrs:Chat('fogend 25')
+            plrs:Chat('fogcolor 0 0 0')
+            plrs:Chat('outdoorambient 0 0 0')
+            plrs:Chat('music 950296099')
+            plrs.LocalPlayer.Character.Humanoid:EquipTool(plrs.LocalPlayer.Backpack.VampireVanquisher)
+            plrs:Chat('size all .3')
+            ---------------------------------------------------------------------
+        elseif txt:lower():sub(1, 5) == 'abuse' then
+            plrs:Chat('explode '..txt:lower():sub(7))
+            wait(0.1)
+            plrs:Chat('reset '..txt:lower():sub(7))
+            ---------------------------------------------------------------------
+        elseif txt:lower():sub(1) == 'hlag' then
+            if plrs.LocalPlayer.PlayerGui:FindFirstChild('HintGUI') then
+                plrs.LocalPlayer.PlayerGui:FindFirstChild('HintGUI'):Destroy()
+            else
+                plrs:Chat("h "..zalgo)
+            end
+        else
+            local text = txt
+            local arguments = text:split(";")
+            for i,v in pairs(arguments) do
+                wait(0.1)
+                plrs:Chat(""..v)
+            end
+        end
+    end
+end)
+---------------------------------------------------------------------------------------------
+while wait() do
+    local txt = input.Text
+    if txt and spamming == true then
+---------------------------------------------------------------------
+        if txt:lower():sub(1, 3) == 'lag' then
+            plrs:Chat('pm/'..txt:lower():sub(5)..'/'..zalgo)
+            ---------------------------------------------------------------------
+        elseif txt:lower():sub(1) == 'crash' then
+            plrs:Chat('gear me 00000000000000000094794847')
+            plrs.LocalPlayer.Character.Humanoid:EquipTool(plrs.LocalPlayer.Backpack.VampireVanquisher)
+            plrs:Chat('size me .3')
+            ---------------------------------------------------------------------
+        elseif txt:lower():sub(1) == 'scrash' then
+            plrs:Chat('clr')
+            plrs:Chat('gear all 00000000000000000094794847')
+            plrs:Chat('h/'..zalgo)
+            plrs:Chat('clr')
+            plrs:Chat('fix')
+            plrs:Chat('time 0')
+            plrs:Chat('fogend 25')
+            plrs:Chat('fogcolor 0 0 0')
+            plrs:Chat('outdoorambient 0 0 0')
+            plrs:Chat('music 950296099')
+            plrs.LocalPlayer.Character.Humanoid:EquipTool(plrs.LocalPlayer.Backpack.VampireVanquisher)
+            plrs:Chat('size all .3')
+            ---------------------------------------------------------------------
+        elseif txt:lower():sub(1, 5) == 'abuse' then
+            plrs:Chat('explode '..txt:lower():sub(7))
+            wait(0.1)
+            plrs:Chat('reset '..txt:lower():sub(7))
+            ---------------------------------------------------------------------
+        elseif txt:lower():sub(1) == 'hlag' then
+            if plrs.LocalPlayer.PlayerGui:FindFirstChild('HintGUI') then
+                plrs.LocalPlayer.PlayerGui:FindFirstChild('HintGUI'):Destroy()
+            else
+                plrs:Chat("h "..zalgo)
+            end
+        else
+            local text = txt
+            local arguments = text:split(";")
+            for i,v in pairs(arguments) do
+                wait(0.1)
+                plrs:Chat(""..v)
+            end
+        end
+    end
+end
+---------------------------------------------------------------------------------------------
