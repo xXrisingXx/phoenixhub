@@ -358,10 +358,8 @@ while wait() do
                 if text:find(';') then
                     wait(0.04)
                     plrs:Chat(""..v)
-                    print('; found')
                 else
                     plrs:Chat(""..v)
-                    print('did not find')
                 end
             end
         end
