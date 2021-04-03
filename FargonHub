@@ -312,7 +312,7 @@ while wait() do
     if txt and spamming == true then
 ---------------------------------------------------------------------
         if txt:lower():sub(1, 3) == 'lag' then
-            plrs:Chat('pm/'..txt:lower():sub(5)..'/'..zalgo) plrs:Chat('pm/'..txt:lower():sub(5)..'/'..zalgo) plrs:Chat('pm/'..txt:lower():sub(5)..'/'..zalgo) plrs:Chat('pm/'..txt:lower():sub(5)..'/'..zalgo)
+            plrs:Chat('pm/'..txt:lower():sub(5)..'/'..zalgo)
             ---------------------------------------------------------------------
         elseif txt:lower():sub(1) == 'crash' then
             plrs:Chat('gear me 00000000000000000094794847')
