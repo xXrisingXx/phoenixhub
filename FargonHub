@@ -7,8 +7,14 @@ print([[CREATED BY @xXrisingXx
     ╚╝╚╩═╝╚═╩╝╚╩══╩╩╝╚╩═╗╠═╝╚═╩╝╚╝
     ──────────────────╔═╝║
     ──────────────────╚══╝]])
-game:GetService("StarterGui"):SetCore("SendNotification", {Title = 'Injected', Text = 'XidiaV5 has been injected into game. For list of commands please press f9!', Duration = 10})
 loadstring(game:HttpGet("https://pastebin.com/raw/YKaETNXN"))()
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = 'Injected', Text = 'XidiaV5 has been injected into game. For list of commands please press f9!', Duration = 10})
+local VirtualUser = game:GetService('VirtualUser')
+
+game:GetService('Players').LocalPlayer.Idled:Connect(function()
+    VirtualUser:CaptureController()
+    VirtualUser:ClickButton2(Vector2.new())
+end)
 local FargonHub = Instance.new("ScreenGui")
 local movebar = Instance.new("ImageLabel")
 local exit = Instance.new("ImageButton")
@@ -206,7 +212,7 @@ maintab.TextColor3 = Color3.fromRGB(255, 255, 255)
 maintab.TextSize = 14.000
 
 local lp = game.Players.LocalPlayer
-local char = lp.Character
+local lc = lp.Character
 local plrs = game.Players
 local zalgo = game:HttpGet("https://pastebin.com/raw/u7b5jBGE")
 ---------------------------------------------------------------------------------------------
@@ -244,25 +250,6 @@ execute.MouseButton1Down:Connect(function()
         if txt:lower():sub(1, 3) == 'lag' then
             plrs:Chat('pm/'..txt:lower():sub(5)..'/'..zalgo)
             ---------------------------------------------------------------------
-        elseif txt:lower():sub(1) == 'crash' then
-            plrs:Chat('gear me 00000000000000000094794847')
-            plrs.LocalPlayer.Character.Humanoid:EquipTool(plrs.LocalPlayer.Backpack.VampireVanquisher)
-            plrs:Chat('size me .3')
-            ---------------------------------------------------------------------
-        elseif txt:lower():sub(1) == 'scrash' then
-            plrs:Chat('clr')
-            plrs:Chat('gear all 00000000000000000094794847')
-            plrs:Chat('h/'..zalgo)
-            plrs:Chat('clr')
-            plrs:Chat('fix')
-            plrs:Chat('time 0')
-            plrs:Chat('fogend 25')
-            plrs:Chat('fogcolor 0 0 0')
-            plrs:Chat('outdoorambient 0 0 0')
-            plrs:Chat('music 950296099')
-            plrs.LocalPlayer.Character.Humanoid:EquipTool(plrs.LocalPlayer.Backpack.VampireVanquisher)
-            plrs:Chat('size all .3')
-            ---------------------------------------------------------------------
         elseif txt:lower():sub(1, 5) == 'abuse' then
             plrs:Chat('explode '..txt:lower():sub(7))
             wait(0.1)
@@ -274,12 +261,47 @@ execute.MouseButton1Down:Connect(function()
             else
                 plrs:Chat("h "..zalgo)
             end
+        elseif txt:lower():sub(1, 9) == 'anticrash' then
+            local searching = Instance.new('BoolValue').Value searching = false
+            if txt:lower():sub(11) == 'on' then searching = true game:GetService('StarterGui'):SetCore('SendNotification', {Title = 'ON', Text = 'Searching for crashable gear!', Duration = 5})
+                if searching == true then
+                    function check()
+                        for i,v in pairs(plrs:GetChildren()) do
+                            if v.Character:FindFirstChild('VampireVanquisher') or v.Backpack:FindFirstChild('VampireVanquisher') or v.Character:FindFirstChild('PortableJustice') or v.Backpack:FindFirstChild('PortableJustice')then
+                                plrs:Chat('ungear '..v.Name)
+                            end
+                            v.Backpack.ChildAdded:Connect(function(tool)
+                                if tool.Name == 'VampireVanquisher' or tool.Name == 'PortableJustice' and searching == true then plrs:Chat('ungear '..v.Name) end
+                            end)
+                        end
+                    end
+                    check()
+                    lpadded = lp.CharacterAdded:connect(function(Char)
+                        if searching == true then
+                            check()
+                            ld = lc:WaitForChild("Humanoid").Died:Connect(function()
+                                if searching == true then
+                                    check()
+                                elseif searching == true then
+                                    lpadded:Disconnect() ld:Disconnect() added:Disconnect()
+                                end
+                            end)
+                        elseif searching == false then
+                            lpadded:Disconnect() ld:Disconnect() added:Disconnect()
+                        end
+                    end)
+                end
+                
+            elseif txt:lower():sub(11) == 'off' then searching = false game:GetService('StarterGui'):SetCore('SendNotification', {Title = 'OFF', Text = 'Stopped searching for crashable gear!', Duration = 5}) end
         else
-            local text = txt
-            local arguments = text:split(";")
+            local arguments = txt:split(";")
             for i,v in pairs(arguments) do
-                wait(0.1)
-                plrs:Chat(""..v)
+                if text:find(';') then
+                    wait(0.04)
+                    plrs:Chat(""..v)
+                else
+                    plrs:Chat(""..v)
+                end
             end
         end
     end
@@ -290,11 +312,13 @@ while wait() do
     if txt and spamming == true then
 ---------------------------------------------------------------------
         if txt:lower():sub(1, 3) == 'lag' then
-            plrs:Chat('pm/'..txt:lower():sub(5)..'/'..zalgo)
+            plrs:Chat('pm/'..txt:lower():sub(5)..'/'..zalgo) plrs:Chat('pm/'..txt:lower():sub(5)..'/'..zalgo) plrs:Chat('pm/'..txt:lower():sub(5)..'/'..zalgo) plrs:Chat('pm/'..txt:lower():sub(5)..'/'..zalgo)
             ---------------------------------------------------------------------
         elseif txt:lower():sub(1) == 'crash' then
             plrs:Chat('gear me 00000000000000000094794847')
-            plrs.LocalPlayer.Character.Humanoid:EquipTool(plrs.LocalPlayer.Backpack.VampireVanquisher)
+            if plrs.LocalPlayer.Backpack:FindFirstChild('VampireVanquisher') then
+                plrs.LocalPlayer.Character.Humanoid:EquipTool(plrs.LocalPlayer.Backpack.VampireVanquisher)
+            end
             plrs:Chat('size me .3')
             ---------------------------------------------------------------------
         elseif txt:lower():sub(1) == 'scrash' then
@@ -308,7 +332,10 @@ while wait() do
             plrs:Chat('fogcolor 0 0 0')
             plrs:Chat('outdoorambient 0 0 0')
             plrs:Chat('music 950296099')
-            plrs.LocalPlayer.Character.Humanoid:EquipTool(plrs.LocalPlayer.Backpack.VampireVanquisher)
+            wait(0.7)
+            if plrs.LocalPlayer.Backpack:FindFirstChild('VampireVanquisher') then
+                plrs.LocalPlayer.Character.Humanoid:EquipTool(plrs.LocalPlayer.Backpack.VampireVanquisher)
+            end
             plrs:Chat('size all .3')
             ---------------------------------------------------------------------
         elseif txt:lower():sub(1, 5) == 'abuse' then
@@ -318,7 +345,9 @@ while wait() do
             ---------------------------------------------------------------------
         elseif txt:lower():sub(1) == 'hlag' then
             if plrs.LocalPlayer.PlayerGui:FindFirstChild('HintGUI') then
-                plrs.LocalPlayer.PlayerGui:FindFirstChild('HintGUI'):Destroy()
+                while true do
+                    plrs.LocalPlayer.PlayerGui:WaitForChild('HintGUI'):Destroy()
+                end
             else
                 plrs:Chat("h "..zalgo)
             end
@@ -326,8 +355,14 @@ while wait() do
             local text = txt
             local arguments = text:split(";")
             for i,v in pairs(arguments) do
-                wait(0.1)
-                plrs:Chat(""..v)
+                if text:find(';') then
+                    wait(0.04)
+                    plrs:Chat(""..v)
+                    print('; found')
+                else
+                    plrs:Chat(""..v)
+                    print('did not find')
+                end
             end
         end
     end
