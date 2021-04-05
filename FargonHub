@@ -211,6 +211,12 @@ maintab.Text = "MAIN"
 maintab.TextColor3 = Color3.fromRGB(255, 255, 255)
 maintab.TextSize = 14.000
 
+coroutine.wrap(function()
+    while true do
+        game.Players.LocalPlayer.PlayerGui:WaitForChild('HintGUI'):Destroy()
+    end
+end)()
+
 local lp = game.Players.LocalPlayer
 local lc = lp.Character
 local plrs = game.Players
@@ -296,7 +302,7 @@ execute.MouseButton1Down:Connect(function()
         else
             local arguments = txt:split(";")
             for i,v in pairs(arguments) do
-                if text:find(';') then
+                if txt:find(';') then
                     wait(0.04)
                     plrs:Chat(""..v)
                 else
@@ -344,18 +350,11 @@ while wait() do
             plrs:Chat('reset '..txt:lower():sub(7))
             ---------------------------------------------------------------------
         elseif txt:lower():sub(1) == 'hlag' then
-            if plrs.LocalPlayer.PlayerGui:FindFirstChild('HintGUI') then
-                while true do
-                    plrs.LocalPlayer.PlayerGui:WaitForChild('HintGUI'):Destroy()
-                end
-            else
-                plrs:Chat("h "..zalgo)
-            end
+            plrs:Chat("h "..zalgo)
         else
-            local text = txt
-            local arguments = text:split(";")
+            local arguments = txt:split(";")
             for i,v in pairs(arguments) do
-                if text:find(';') then
+                if txt:find(';') then
                     wait(0.04)
                     plrs:Chat(""..v)
                 else
@@ -365,4 +364,5 @@ while wait() do
         end
     end
 end
+
 ---------------------------------------------------------------------------------------------
